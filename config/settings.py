@@ -4,6 +4,11 @@ HR Payroll System uchun Django sozlamalari.
 from pathlib import Path
 from datetime import timedelta
 from decouple import config, Csv
+from decouple import config
+
+ADMIN_USERNAME = config('ADMIN_USERNAME', default='admin')
+ADMIN_EMAIL = config('ADMIN_EMAIL', default='admin@example.com')
+ADMIN_PASSWORD = config('ADMIN_PASSWORD', default='adminpassword123')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
