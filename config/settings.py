@@ -4,11 +4,6 @@ HR Payroll System uchun Django sozlamalari.
 from pathlib import Path
 from datetime import timedelta
 from decouple import config, Csv
-from decouple import config
-
-ADMIN_USERNAME = config('ADMIN_USERNAME', default='admin')
-ADMIN_EMAIL = config('ADMIN_EMAIL', default='admin@example.com')
-ADMIN_PASSWORD = config('ADMIN_PASSWORD', default='adminpassword123')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -123,6 +118,17 @@ CORS_ALLOWED_ORIGINS = config(
     default='http://localhost:3000,http://127.0.0.1:3000',
     cast=Csv(),
 )
+# Server ishga tushganda avtomatik admin yaratish (Email orqali)
+from django.contrib.auth import get_user_model
+try:
+    User = get_user_model()
+    admin_email = "admin@example.com"
+    if not User.objects.filter(email=admin_email).exists():
+        # User modelida username bo'lmagani uchun uni tashlab o'tamiz yoki email beramiz
+        User.objects.create_superuser(email=admin_email, password="adminpassword123")
+        print(">>> Avtomatik Admin yaratildi: admin@example.com / adminpassword123")
+except Exception as e:
+    print(f"Skipped superuser creation: {e}")
 
 
 STATIC_URL = '/static/'
