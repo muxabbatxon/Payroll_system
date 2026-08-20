@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # HR Payroll System — Backend (Django REST Framework)
 
 Xodimlar davomati (tabel) va oylik maoshni avtomatik hisoblash tizimining backend qismi.
@@ -150,3 +151,6 @@ Loyiha smoke-test orqali quyidagilar tasdiqlandi:
 
 - Tabel grid uchun `GET /api/attendance/records/monthly_grid/` dan foydalanib, jadvalni React/Vue’da render qiling; har bir katak `onBlur`da `save_cell`ga yuborilsin.
 - Sticky header uchun frontendda `position: sticky` CSS ishlatiladi (backend tomonidan cheklov yo'q).
+=======
+# Payroll_system
+>>>>>>> 382b85fcedbc3c557ecc4a3961f21f5849296a71
