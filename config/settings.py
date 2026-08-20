@@ -11,7 +11,7 @@ SECRET_KEY ="kab&qvxhy0)y-pp&k00skl1rk2#c2m88c$-(5@c=8t0wi#+xu!"
 
 DEBUG = True
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
+ALLOWED_HOSTS = ['payroll-system-c9s8.onrender.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
